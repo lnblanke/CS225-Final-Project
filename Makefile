@@ -1,0 +1,1 @@
+g++ -o ./exec  ./lib/graph/city.hpp ./lib/graph/edge.hpp ./lib/graph/graph.hpp ./lib/graph/node.hpp
