@@ -1,0 +1,1 @@
+/usr/bin/clang++  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function CMakeFiles/main.dir/src/main.cpp.o -o main  lib/algorithm/libalgorithm.a lib/graph/libgraph.a lib/data/libdata.a 

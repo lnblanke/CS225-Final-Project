@@ -1,0 +1,2 @@
+/usr/bin/ar qc libalgorithm.a CMakeFiles/algorithm.dir/bfs.cpp.o CMakeFiles/algorithm.dir/dfs.cpp.o CMakeFiles/algorithm.dir/dijkstra.cpp.o
+/usr/bin/ranlib libalgorithm.a
