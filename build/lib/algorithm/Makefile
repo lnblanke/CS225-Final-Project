@@ -203,6 +203,30 @@ dijkstra.cpp.s:
 	cd /workspaces/cs225/CS225-Final-Project/build && $(MAKE) $(MAKESILENT) -f lib/algorithm/CMakeFiles/algorithm.dir/build.make lib/algorithm/CMakeFiles/algorithm.dir/dijkstra.cpp.s
 .PHONY : dijkstra.cpp.s
 
+tarjan.o: tarjan.cpp.o
+.PHONY : tarjan.o
+
+# target to build an object file
+tarjan.cpp.o:
+	cd /workspaces/cs225/CS225-Final-Project/build && $(MAKE) $(MAKESILENT) -f lib/algorithm/CMakeFiles/algorithm.dir/build.make lib/algorithm/CMakeFiles/algorithm.dir/tarjan.cpp.o
+.PHONY : tarjan.cpp.o
+
+tarjan.i: tarjan.cpp.i
+.PHONY : tarjan.i
+
+# target to preprocess a source file
+tarjan.cpp.i:
+	cd /workspaces/cs225/CS225-Final-Project/build && $(MAKE) $(MAKESILENT) -f lib/algorithm/CMakeFiles/algorithm.dir/build.make lib/algorithm/CMakeFiles/algorithm.dir/tarjan.cpp.i
+.PHONY : tarjan.cpp.i
+
+tarjan.s: tarjan.cpp.s
+.PHONY : tarjan.s
+
+# target to generate assembly for a file
+tarjan.cpp.s:
+	cd /workspaces/cs225/CS225-Final-Project/build && $(MAKE) $(MAKESILENT) -f lib/algorithm/CMakeFiles/algorithm.dir/build.make lib/algorithm/CMakeFiles/algorithm.dir/tarjan.cpp.s
+.PHONY : tarjan.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -221,6 +245,9 @@ help:
 	@echo "... dijkstra.o"
 	@echo "... dijkstra.i"
 	@echo "... dijkstra.s"
+	@echo "... tarjan.o"
+	@echo "... tarjan.i"
+	@echo "... tarjan.s"
 .PHONY : help
 
 

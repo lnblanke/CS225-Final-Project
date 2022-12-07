@@ -1,7 +1,7 @@
 #ifndef EDGE_H
 #define EDGE_H
 
-#include "node.h"
+#include "vertex.h"
 
 namespace graph {
     /*
@@ -12,12 +12,16 @@ namespace graph {
     next_: the next edge it connects to 
     */
     struct Edge {
-        Node* u, *v;
-        int w;
+        Vertex* u, *v;
+        double w;
         size_t next;
 
-        Edge(Node* U, Node* V, size_t W, size_t nxt) {
+        Edge(Vertex* U, Vertex* V, double W, size_t nxt) {
             u = U, v = V, w = W, next = nxt;
+        }
+
+        bool operator==(const Edge& other) const {
+            return *u == *(other.u) && *v == *(other.v) && w == other.w && next == other.w;
         }
     };
 }

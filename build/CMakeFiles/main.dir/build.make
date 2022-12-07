@@ -95,6 +95,8 @@ main: CMakeFiles/main.dir/build.make
 main: lib/algorithm/libalgorithm.a
 main: lib/graph/libgraph.a
 main: lib/data/libdata.a
+main: libexec.a
+main: libtest_lib.a
 main: CMakeFiles/main.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)

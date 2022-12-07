@@ -6,8 +6,10 @@
 #include <map>
 #include <queue>
 
+using namespace graph;
+
 namespace algorithm {
-    std::map<graph::Node*, size_t> dijkstra(const graph::Graph& graph, graph::Node* start);
+    std::map<Vertex*, size_t> dijkstra(const Graph& graph, Vertex* start);
 }
 
 #endif

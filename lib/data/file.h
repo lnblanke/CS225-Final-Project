@@ -20,7 +20,7 @@ namespace data {
 
     filename: the input csv file
     */
-    vector<vector<string>> read_file(string filename);
+    vector<vector<string>> read_file(string filename, char sep = ',');
 
     /*
     Split a string based on deliminator (auto trim)

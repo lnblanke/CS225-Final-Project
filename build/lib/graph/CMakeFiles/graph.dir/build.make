@@ -69,15 +69,31 @@ include lib/graph/CMakeFiles/graph.dir/progress.make
 # Include the compile flags for this target's objects.
 include lib/graph/CMakeFiles/graph.dir/flags.make
 
+lib/graph/CMakeFiles/graph.dir/graph.cpp.o: lib/graph/CMakeFiles/graph.dir/flags.make
+lib/graph/CMakeFiles/graph.dir/graph.cpp.o: ../lib/graph/graph.cpp
+lib/graph/CMakeFiles/graph.dir/graph.cpp.o: lib/graph/CMakeFiles/graph.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object lib/graph/CMakeFiles/graph.dir/graph.cpp.o"
+	cd /workspaces/cs225/CS225-Final-Project/build/lib/graph && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/graph/CMakeFiles/graph.dir/graph.cpp.o -MF CMakeFiles/graph.dir/graph.cpp.o.d -o CMakeFiles/graph.dir/graph.cpp.o -c /workspaces/cs225/CS225-Final-Project/lib/graph/graph.cpp
+
+lib/graph/CMakeFiles/graph.dir/graph.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/graph.dir/graph.cpp.i"
+	cd /workspaces/cs225/CS225-Final-Project/build/lib/graph && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cs225/CS225-Final-Project/lib/graph/graph.cpp > CMakeFiles/graph.dir/graph.cpp.i
+
+lib/graph/CMakeFiles/graph.dir/graph.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/graph.dir/graph.cpp.s"
+	cd /workspaces/cs225/CS225-Final-Project/build/lib/graph && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cs225/CS225-Final-Project/lib/graph/graph.cpp -o CMakeFiles/graph.dir/graph.cpp.s
+
 # Object files for target graph
-graph_OBJECTS =
+graph_OBJECTS = \
+"CMakeFiles/graph.dir/graph.cpp.o"
 
 # External object files for target graph
 graph_EXTERNAL_OBJECTS =
 
+lib/graph/libgraph.a: lib/graph/CMakeFiles/graph.dir/graph.cpp.o
 lib/graph/libgraph.a: lib/graph/CMakeFiles/graph.dir/build.make
 lib/graph/libgraph.a: lib/graph/CMakeFiles/graph.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library libgraph.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgraph.a"
 	cd /workspaces/cs225/CS225-Final-Project/build/lib/graph && $(CMAKE_COMMAND) -P CMakeFiles/graph.dir/cmake_clean_target.cmake
 	cd /workspaces/cs225/CS225-Final-Project/build/lib/graph && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/graph.dir/link.txt --verbose=$(VERBOSE)
 

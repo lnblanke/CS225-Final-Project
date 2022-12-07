@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/algorithm.dir/dfs.cpp.o.d"
   "CMakeFiles/algorithm.dir/dijkstra.cpp.o"
   "CMakeFiles/algorithm.dir/dijkstra.cpp.o.d"
+  "CMakeFiles/algorithm.dir/tarjan.cpp.o"
+  "CMakeFiles/algorithm.dir/tarjan.cpp.o.d"
   "libalgorithm.a"
   "libalgorithm.pdb"
 )

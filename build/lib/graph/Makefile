@@ -131,6 +131,30 @@ graph/fast:
 	cd /workspaces/cs225/CS225-Final-Project/build && $(MAKE) $(MAKESILENT) -f lib/graph/CMakeFiles/graph.dir/build.make lib/graph/CMakeFiles/graph.dir/build
 .PHONY : graph/fast
 
+graph.o: graph.cpp.o
+.PHONY : graph.o
+
+# target to build an object file
+graph.cpp.o:
+	cd /workspaces/cs225/CS225-Final-Project/build && $(MAKE) $(MAKESILENT) -f lib/graph/CMakeFiles/graph.dir/build.make lib/graph/CMakeFiles/graph.dir/graph.cpp.o
+.PHONY : graph.cpp.o
+
+graph.i: graph.cpp.i
+.PHONY : graph.i
+
+# target to preprocess a source file
+graph.cpp.i:
+	cd /workspaces/cs225/CS225-Final-Project/build && $(MAKE) $(MAKESILENT) -f lib/graph/CMakeFiles/graph.dir/build.make lib/graph/CMakeFiles/graph.dir/graph.cpp.i
+.PHONY : graph.cpp.i
+
+graph.s: graph.cpp.s
+.PHONY : graph.s
+
+# target to generate assembly for a file
+graph.cpp.s:
+	cd /workspaces/cs225/CS225-Final-Project/build && $(MAKE) $(MAKESILENT) -f lib/graph/CMakeFiles/graph.dir/build.make lib/graph/CMakeFiles/graph.dir/graph.cpp.s
+.PHONY : graph.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -140,6 +164,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... graph"
+	@echo "... graph.o"
+	@echo "... graph.i"
+	@echo "... graph.s"
 .PHONY : help
 
 

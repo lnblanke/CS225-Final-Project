@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/workspaces/cs225/CS225-Final-Project/lib/algorithm -I/workspaces/cs225/CS225-Final-Project/lib/graph -I/workspaces/cs225/CS225-Final-Project/lib/data
+CXX_INCLUDES = -I/workspaces/cs225/CS225-Final-Project/lib/algorithm -I/workspaces/cs225/CS225-Final-Project/lib/graph -I/workspaces/cs225/CS225-Final-Project/lib/data -I/workspaces/cs225/CS225-Final-Project/tests
 
-CXX_FLAGS =  -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -std=gnu++17
+CXX_FLAGS =  -gdwarf-4 -pedantic -Wall -Werror -Wfatal-errors -Wextra -Wno-unused-parameter -Wno-unused-variable -Wno-unused-function -g -std=gnu++17
 

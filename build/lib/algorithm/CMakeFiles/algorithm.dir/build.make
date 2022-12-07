@@ -111,11 +111,26 @@ lib/algorithm/CMakeFiles/algorithm.dir/dijkstra.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithm.dir/dijkstra.cpp.s"
 	cd /workspaces/cs225/CS225-Final-Project/build/lib/algorithm && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cs225/CS225-Final-Project/lib/algorithm/dijkstra.cpp -o CMakeFiles/algorithm.dir/dijkstra.cpp.s
 
+lib/algorithm/CMakeFiles/algorithm.dir/tarjan.cpp.o: lib/algorithm/CMakeFiles/algorithm.dir/flags.make
+lib/algorithm/CMakeFiles/algorithm.dir/tarjan.cpp.o: ../lib/algorithm/tarjan.cpp
+lib/algorithm/CMakeFiles/algorithm.dir/tarjan.cpp.o: lib/algorithm/CMakeFiles/algorithm.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object lib/algorithm/CMakeFiles/algorithm.dir/tarjan.cpp.o"
+	cd /workspaces/cs225/CS225-Final-Project/build/lib/algorithm && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT lib/algorithm/CMakeFiles/algorithm.dir/tarjan.cpp.o -MF CMakeFiles/algorithm.dir/tarjan.cpp.o.d -o CMakeFiles/algorithm.dir/tarjan.cpp.o -c /workspaces/cs225/CS225-Final-Project/lib/algorithm/tarjan.cpp
+
+lib/algorithm/CMakeFiles/algorithm.dir/tarjan.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/algorithm.dir/tarjan.cpp.i"
+	cd /workspaces/cs225/CS225-Final-Project/build/lib/algorithm && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cs225/CS225-Final-Project/lib/algorithm/tarjan.cpp > CMakeFiles/algorithm.dir/tarjan.cpp.i
+
+lib/algorithm/CMakeFiles/algorithm.dir/tarjan.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/algorithm.dir/tarjan.cpp.s"
+	cd /workspaces/cs225/CS225-Final-Project/build/lib/algorithm && /usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cs225/CS225-Final-Project/lib/algorithm/tarjan.cpp -o CMakeFiles/algorithm.dir/tarjan.cpp.s
+
 # Object files for target algorithm
 algorithm_OBJECTS = \
 "CMakeFiles/algorithm.dir/bfs.cpp.o" \
 "CMakeFiles/algorithm.dir/dfs.cpp.o" \
-"CMakeFiles/algorithm.dir/dijkstra.cpp.o"
+"CMakeFiles/algorithm.dir/dijkstra.cpp.o" \
+"CMakeFiles/algorithm.dir/tarjan.cpp.o"
 
 # External object files for target algorithm
 algorithm_EXTERNAL_OBJECTS =
@@ -123,9 +138,10 @@ algorithm_EXTERNAL_OBJECTS =
 lib/algorithm/libalgorithm.a: lib/algorithm/CMakeFiles/algorithm.dir/bfs.cpp.o
 lib/algorithm/libalgorithm.a: lib/algorithm/CMakeFiles/algorithm.dir/dfs.cpp.o
 lib/algorithm/libalgorithm.a: lib/algorithm/CMakeFiles/algorithm.dir/dijkstra.cpp.o
+lib/algorithm/libalgorithm.a: lib/algorithm/CMakeFiles/algorithm.dir/tarjan.cpp.o
 lib/algorithm/libalgorithm.a: lib/algorithm/CMakeFiles/algorithm.dir/build.make
 lib/algorithm/libalgorithm.a: lib/algorithm/CMakeFiles/algorithm.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libalgorithm.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX static library libalgorithm.a"
 	cd /workspaces/cs225/CS225-Final-Project/build/lib/algorithm && $(CMAKE_COMMAND) -P CMakeFiles/algorithm.dir/cmake_clean_target.cmake
 	cd /workspaces/cs225/CS225-Final-Project/build/lib/algorithm && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/algorithm.dir/link.txt --verbose=$(VERBOSE)
 

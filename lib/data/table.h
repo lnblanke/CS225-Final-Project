@@ -4,134 +4,48 @@
 #include <vector>
 #include <string>
 #include <stdexcept>
+#include <map>
 
-class Table {
-private:
-    class Column {
+namespace data {
+    class Table {
     private:
-        std::string name_;
-        std::vector<void*> items_;
-        std::string type_;
+        class Column {
+        private:
+            std::string name_;
+            std::vector<std::string> items_;
+            std::string type_;
 
-        void* deduceType(std::string item);
+            std::string deduceType(std::string item) const;
+
+        public:
+            Column(std::string name);
+            void resize(size_t size);
+            std::string get(size_t idx) const;
+            void set(size_t idx, std::string item);
+            std::string getName() const { return name_; }
+            std::string getType() const { return type_; }
+            size_t size() const { return items_.size(); }
+            std::string& operator[](size_t idx);
+        };
+
+        std::vector<Column*> columns;
+        std::map<std::string, Column*> names_;
 
     public:
-        Column(std::string name, std::string type) {
-            if (type != "int" &&  type != "double" && type != "string") 
-                throw std::invalid_argument("Cannot recognize type");
-
-            name_ = name;
-        }
-
-        void resize(size_t size) {
-            items_.resize(size);
-        }
- 
-        void* get(size_t idx) {
-            if (idx >= items_.size()) 
-                throw std::invalid_argument("Index for Column.get() exceeds the size");
-        
-            return items_[idx];
-        }
-
-        void set(size_t idx, std::string item) {
-            if (idx >= items_.size()) 
-                throw std::invalid_argument("Index for Column.get() exceeds the size");
-
-            items_[idx] = deduceType(item);    
-        }
-
-        std::string getName() {
-            return name_;
-        }
-
-        std::string getType() {
-            return type_;
-        }
-
-        size_t size() {
-            return items_.size();
-        }
-
-        void* operator[](size_t idx) {
-            if (idx >= items_.size()) 
-                throw std::invalid_argument("Index for Column.get() exceeds the size");
-
-            return items_[idx];
-        }
+        Table() = default;
+        void addColumn(std::string name);
+        void setItem(size_t i, size_t j, std::string item);
+        std::string getItem(size_t i, size_t j) const;
+        std::string getColName(size_t i) const;
+        std::string getColType(size_t i) const;
+        Column& operator[](std::string col_name);
+        Column& operator[](size_t idx);
+        size_t getNumRows() const { return columns.empty()? 0: columns[0]->size(); }
+        size_t getNumCols() const { return columns.size(); }
+        void addRows(size_t num);
+        void dropCol(size_t idx);
+        void dropCol(std::string col_name);
     };
-
-    std::vector<Column*> columns;
-
-public:
-    Table() = default;
-
-    void addColumn(std::string name, std::string type) {
-        auto newc = new Column(name, type);
-
-        if (! columns.empty()) newc->resize(columns[0]->size());
-    
-        columns.push_back(newc);
-    }
-
-    void setItem(size_t i, size_t j, std::string item) {
-        if (i >= columns.size())
-            throw std::invalid_argument("Index for Table.setItem() is out of range");
-
-        columns[i]->set(j, item);
-    }
-
-    void* getItem(size_t i, size_t j) {
-        if (i >= columns.size())
-            throw std::invalid_argument("Index for Table.setItem() is out of range");
-
-        return columns[i]->get(j);    
-    }
-
-    std::string getColName(size_t i) {
-        if (i >= columns.size())
-            throw std::invalid_argument("Index for Table.setItem() is out of range");
-    
-        return columns[i]->getName();
-    }
-
-    std::string getColType(size_t i) {
-        if (i >= columns.size())
-            throw std::invalid_argument("Index for Table.setItem() is out of range");
-    
-        return columns[i]->getType();
-    }
-
-    Column* operator[](std::string col_name) {
-        for (const auto c : columns) {
-            if (c->getName() == col_name) {
-                return c;
-            }
-        }
-
-        throw std::invalid_argument("Column with col_name is not found");
-    }
-
-    Column* operator[](size_t idx) {
-        if (idx >= columns.size())
-            throw std::invalid_argument("Index for Table.setItem() is out of range");
-    
-        return columns[idx];
-    }
-
-    size_t getNumRows() {
-        return columns.empty()? 0: columns[0]->size();
-    }
-
-    size_t getNumCols() {
-        return columns.size();
-    }
-
-    void addRows(size_t num) {
-        for (const auto c : columns) {
-            c->resize(num);
-        }
-    }
-};
+}
 
 #endif

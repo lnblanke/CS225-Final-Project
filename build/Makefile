@@ -118,6 +118,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_lib
+
+# Build rule for target.
+test_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_lib
+.PHONY : test_lib
+
+# fast build rule for target.
+test_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_lib.dir/build.make CMakeFiles/test_lib.dir/build
+.PHONY : test_lib/fast
+
+#=============================================================================
+# Target rules for targets named exec
+
+# Build rule for target.
+exec: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 exec
+.PHONY : exec
+
+# fast build rule for target.
+exec/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/build
+.PHONY : exec/fast
+
+#=============================================================================
 # Target rules for targets named main
 
 # Build rule for target.
@@ -187,6 +213,7 @@ src/main.o: src/main.cpp.o
 
 # target to build an object file
 src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/src/main.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.o
 .PHONY : src/main.cpp.o
 
@@ -195,6 +222,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/src/main.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
@@ -203,6 +231,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/exec.dir/build.make CMakeFiles/exec.dir/src/main.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
@@ -230,6 +259,174 @@ tests/test-bfs.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-bfs.cpp.s
 .PHONY : tests/test-bfs.cpp.s
 
+tests/test-dfs.o: tests/test-dfs.cpp.o
+.PHONY : tests/test-dfs.o
+
+# target to build an object file
+tests/test-dfs.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-dfs.cpp.o
+.PHONY : tests/test-dfs.cpp.o
+
+tests/test-dfs.i: tests/test-dfs.cpp.i
+.PHONY : tests/test-dfs.i
+
+# target to preprocess a source file
+tests/test-dfs.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-dfs.cpp.i
+.PHONY : tests/test-dfs.cpp.i
+
+tests/test-dfs.s: tests/test-dfs.cpp.s
+.PHONY : tests/test-dfs.s
+
+# target to generate assembly for a file
+tests/test-dfs.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-dfs.cpp.s
+.PHONY : tests/test-dfs.cpp.s
+
+tests/test-dijkstra.o: tests/test-dijkstra.cpp.o
+.PHONY : tests/test-dijkstra.o
+
+# target to build an object file
+tests/test-dijkstra.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-dijkstra.cpp.o
+.PHONY : tests/test-dijkstra.cpp.o
+
+tests/test-dijkstra.i: tests/test-dijkstra.cpp.i
+.PHONY : tests/test-dijkstra.i
+
+# target to preprocess a source file
+tests/test-dijkstra.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-dijkstra.cpp.i
+.PHONY : tests/test-dijkstra.cpp.i
+
+tests/test-dijkstra.s: tests/test-dijkstra.cpp.s
+.PHONY : tests/test-dijkstra.s
+
+# target to generate assembly for a file
+tests/test-dijkstra.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-dijkstra.cpp.s
+.PHONY : tests/test-dijkstra.cpp.s
+
+tests/test-file.o: tests/test-file.cpp.o
+.PHONY : tests/test-file.o
+
+# target to build an object file
+tests/test-file.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-file.cpp.o
+.PHONY : tests/test-file.cpp.o
+
+tests/test-file.i: tests/test-file.cpp.i
+.PHONY : tests/test-file.i
+
+# target to preprocess a source file
+tests/test-file.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-file.cpp.i
+.PHONY : tests/test-file.cpp.i
+
+tests/test-file.s: tests/test-file.cpp.s
+.PHONY : tests/test-file.s
+
+# target to generate assembly for a file
+tests/test-file.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-file.cpp.s
+.PHONY : tests/test-file.cpp.s
+
+tests/test-graph.o: tests/test-graph.cpp.o
+.PHONY : tests/test-graph.o
+
+# target to build an object file
+tests/test-graph.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-graph.cpp.o
+.PHONY : tests/test-graph.cpp.o
+
+tests/test-graph.i: tests/test-graph.cpp.i
+.PHONY : tests/test-graph.i
+
+# target to preprocess a source file
+tests/test-graph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-graph.cpp.i
+.PHONY : tests/test-graph.cpp.i
+
+tests/test-graph.s: tests/test-graph.cpp.s
+.PHONY : tests/test-graph.s
+
+# target to generate assembly for a file
+tests/test-graph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-graph.cpp.s
+.PHONY : tests/test-graph.cpp.s
+
+tests/test-table.o: tests/test-table.cpp.o
+.PHONY : tests/test-table.o
+
+# target to build an object file
+tests/test-table.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-table.cpp.o
+.PHONY : tests/test-table.cpp.o
+
+tests/test-table.i: tests/test-table.cpp.i
+.PHONY : tests/test-table.i
+
+# target to preprocess a source file
+tests/test-table.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-table.cpp.i
+.PHONY : tests/test-table.cpp.i
+
+tests/test-table.s: tests/test-table.cpp.s
+.PHONY : tests/test-table.s
+
+# target to generate assembly for a file
+tests/test-table.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-table.cpp.s
+.PHONY : tests/test-table.cpp.s
+
+tests/test-tarjan.o: tests/test-tarjan.cpp.o
+.PHONY : tests/test-tarjan.o
+
+# target to build an object file
+tests/test-tarjan.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-tarjan.cpp.o
+.PHONY : tests/test-tarjan.cpp.o
+
+tests/test-tarjan.i: tests/test-tarjan.cpp.i
+.PHONY : tests/test-tarjan.i
+
+# target to preprocess a source file
+tests/test-tarjan.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-tarjan.cpp.i
+.PHONY : tests/test-tarjan.cpp.i
+
+tests/test-tarjan.s: tests/test-tarjan.cpp.s
+.PHONY : tests/test-tarjan.s
+
+# target to generate assembly for a file
+tests/test-tarjan.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-tarjan.cpp.s
+.PHONY : tests/test-tarjan.cpp.s
+
+tests/test.o: tests/test.cpp.o
+.PHONY : tests/test.o
+
+# target to build an object file
+tests/test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_lib.dir/build.make CMakeFiles/test_lib.dir/tests/test.cpp.o
+.PHONY : tests/test.cpp.o
+
+tests/test.i: tests/test.cpp.i
+.PHONY : tests/test.i
+
+# target to preprocess a source file
+tests/test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_lib.dir/build.make CMakeFiles/test_lib.dir/tests/test.cpp.i
+.PHONY : tests/test.cpp.i
+
+tests/test.s: tests/test.cpp.s
+.PHONY : tests/test.s
+
+# target to generate assembly for a file
+tests/test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_lib.dir/build.make CMakeFiles/test_lib.dir/tests/test.cpp.s
+.PHONY : tests/test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -240,15 +437,38 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... algorithm"
 	@echo "... data"
+	@echo "... exec"
 	@echo "... graph"
 	@echo "... main"
 	@echo "... test"
+	@echo "... test_lib"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... tests/test-bfs.o"
 	@echo "... tests/test-bfs.i"
 	@echo "... tests/test-bfs.s"
+	@echo "... tests/test-dfs.o"
+	@echo "... tests/test-dfs.i"
+	@echo "... tests/test-dfs.s"
+	@echo "... tests/test-dijkstra.o"
+	@echo "... tests/test-dijkstra.i"
+	@echo "... tests/test-dijkstra.s"
+	@echo "... tests/test-file.o"
+	@echo "... tests/test-file.i"
+	@echo "... tests/test-file.s"
+	@echo "... tests/test-graph.o"
+	@echo "... tests/test-graph.i"
+	@echo "... tests/test-graph.s"
+	@echo "... tests/test-table.o"
+	@echo "... tests/test-table.i"
+	@echo "... tests/test-table.s"
+	@echo "... tests/test-tarjan.o"
+	@echo "... tests/test-tarjan.i"
+	@echo "... tests/test-tarjan.s"
+	@echo "... tests/test.o"
+	@echo "... tests/test.i"
+	@echo "... tests/test.s"
 .PHONY : help
 
 

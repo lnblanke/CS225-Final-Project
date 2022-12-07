@@ -1,21 +1,23 @@
 #include <bits/stdc++.h>
-#include "../lib/data/file.h"
-#include "../lib/graph/graph.h"
-#include "../lib/algorithm/bfs.h"
-#include "../lib/algorithm/dfs.h"
-#include "../lib/algorithm/dijkstra.h"
+#include "load_files.h"
+#include "spread.h"
 
-using namespace std;
+using std::vector;
+using graph::City;
 
 int main() {
-    auto matrix = data::read_file("../data/airports.dat");
+    auto g = csv_to_graph();
 
-    for (const auto& row : matrix) {
-        for (const auto& col : row) {
-            std::cout << col << " ";
-        }
-        std::cout << std::endl;
+    auto virus = Spread(*g, static_cast<City*>(g->getVertex("Los Angeles, CA")), 3);
+
+    for (int _ = 0; _ < 10; _++) {
+        virus.nextStep();
     }
 
-    auto* g = new graph::Graph(vector<graph::Node*>());
+    virus.isolate({"Washington, DC", "Syracuse, NY"});
+
+    virus.intersect();
+
+    virus.getTimeStamp();
+    virus.getCost();
 }

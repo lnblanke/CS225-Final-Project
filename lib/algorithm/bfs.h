@@ -6,8 +6,8 @@
 #include <map>
 
 namespace algorithm {
-    bool bfs(const graph::Graph& graph, graph::Node* start, graph::Node* dest,
-            std::map<graph::Node*, size_t>& depth);
+    bool bfs(const graph::Graph& graph, graph::Vertex* start, graph::Vertex* dest,
+            std::map<graph::Vertex*, size_t>& depth);
 }
 
 #endif
