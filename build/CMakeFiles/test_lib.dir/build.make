@@ -69,31 +69,15 @@ include CMakeFiles/test_lib.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/test_lib.dir/flags.make
 
-CMakeFiles/test_lib.dir/tests/test.cpp.o: CMakeFiles/test_lib.dir/flags.make
-CMakeFiles/test_lib.dir/tests/test.cpp.o: ../tests/test.cpp
-CMakeFiles/test_lib.dir/tests/test.cpp.o: CMakeFiles/test_lib.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_lib.dir/tests/test.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_lib.dir/tests/test.cpp.o -MF CMakeFiles/test_lib.dir/tests/test.cpp.o.d -o CMakeFiles/test_lib.dir/tests/test.cpp.o -c /workspaces/cs225/CS225-Final-Project/tests/test.cpp
-
-CMakeFiles/test_lib.dir/tests/test.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_lib.dir/tests/test.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cs225/CS225-Final-Project/tests/test.cpp > CMakeFiles/test_lib.dir/tests/test.cpp.i
-
-CMakeFiles/test_lib.dir/tests/test.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_lib.dir/tests/test.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cs225/CS225-Final-Project/tests/test.cpp -o CMakeFiles/test_lib.dir/tests/test.cpp.s
-
 # Object files for target test_lib
-test_lib_OBJECTS = \
-"CMakeFiles/test_lib.dir/tests/test.cpp.o"
+test_lib_OBJECTS =
 
 # External object files for target test_lib
 test_lib_EXTERNAL_OBJECTS =
 
-libtest_lib.a: CMakeFiles/test_lib.dir/tests/test.cpp.o
 libtest_lib.a: CMakeFiles/test_lib.dir/build.make
 libtest_lib.a: CMakeFiles/test_lib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libtest_lib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library libtest_lib.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/test_lib.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_lib.dir/link.txt --verbose=$(VERBOSE)
 

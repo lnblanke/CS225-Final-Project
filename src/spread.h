@@ -33,30 +33,34 @@ class Spread {
 private:
     Graph graph_;
     Graph infected_;
-    City* start_;
-    map<City*, pair<City*, double>> prob_;
-    map<City*, string> status_;
+    string start_;
+    map<Vertex*, pair<Vertex*, double>> prob_;
+    map<Vertex*, string> status_;
     size_t timestamp = 0;
     size_t latency_period_;
     double cost = 0;
-    queue<pair<size_t, City*>> latency_;
+    queue<pair<size_t, Vertex*>> latency_;
 
     inline size_t generateLatency() {
         return latency_period_ + (rand() % 4 - 2);
     }
 
 public:
-    Spread(const Graph& g, City* start, size_t latency_period) {
+    Spread(const Graph& g, std::string start, size_t latency_period) {
         graph_ = g;
         start_ = start;
         latency_period_ = latency_period;
 
-        for (const auto v : graph_.getVertexList()) {
-            status_[cast(v)] = "N";
-        }
+        srand(time(NULL));
 
-        latency_.push({generateLatency(), start_});
-        status_[start_] = "L";
+        for (const auto v : graph_.getVertexList()) {
+            status_[v] = "N";
+            prob_[v] = {0, 0};
+        }
+              
+        infected_.addVertex(start_);
+        latency_.push({generateLatency(), graph_.getVertex(start_)});
+        status_[graph_.getVertex(start)] = "L";
     }
 
     vector<vector<Vertex*>> intersect() {
@@ -80,7 +84,7 @@ public:
 
     void isolate(const vector<string>& blocking) {
         for (const auto& v : blocking) {
-            if (! graph_.getVertex(v))
+            if (! graph_.hasVertex(v))
                 throw std::invalid_argument("The city " + v + " is not found");
             if (status_[cast(graph_.getVertex(v))] != "N")
                 throw std::invalid_argument("The city " + v + " is infected or blocked");
@@ -89,18 +93,18 @@ public:
         Graph calc;
         vector<int> indices;
 
-        calc.addVertex(*(new Vertex("source")));
-        calc.addVertex(*(new Vertex("sink")));
+        calc.addVertex("source");
+        calc.addVertex("sink");
 
         for (const auto& v : blocking)
-            status_[cast(graph_.getVertex(v))] = "B";
+            status_[graph_.getVertex(v)] = "B";
 
         for (const auto v : graph_.getVertexList()) {
-            if (status_[cast(v)] == "N")
-                calc.addVertex(*(new Vertex(*v)));
+            if (status_[v] == "N")
+                calc.addVertex(v->getName());
         }
 
-        auto find = [&](City* v) -> Vertex* {
+        auto find = [&](Vertex* v) -> Vertex* {
             if (status_[v] == "B")
                 return calc.getVertex("sink");
             if (status_[v] == "N")
@@ -110,11 +114,11 @@ public:
 
         for (auto i = 0ul; i < graph_.getEdgeList().size(); i++) {
             const auto& e = graph_.getEdge(i);
-            if ((status_[cast(e.u)] == status_[cast(e.v)] && status_[cast(e.u)] != "N") || 
-                status_[cast(e.u)] == "I" || status_[cast(e.u)] == "L" || status_[cast(e.v)] == "B")  
+            if ((status_[e.u] == status_[e.v] && status_[e.u] != "N") || 
+                status_[e.u] == "I" || status_[e.u] == "L" || status_[e.v] == "B")  
                 continue;
             
-            calc.addEdge(find(cast(e.u)), find(cast(e.v)), e.w);
+            calc.addEdge(find(e.u), find(e.v), e.w);
             indices.push_back(i);
         }
 
@@ -132,13 +136,13 @@ public:
         return timestamp;
     }
 
-    map<City*, std::string> getStatus() const {
+    map<Vertex*, std::string> getStatus() const {
         return status_;
     }
 
     void nextStep() {
         timestamp++;
-
+        
         while (! latency_.empty() && latency_.front().first <= timestamp) {
             auto [_, u] = latency_.front();
             latency_.pop();
@@ -150,18 +154,19 @@ public:
             for (auto& it : prob_) {
                 if (status_[it.first] != "N") continue;
             
-                auto v = cast(it.first);
-                auto p = u->getPopulation() * pow(v->getPopulation(), 0.5) * dist[v] / (24e11);
-
-                if (it.second.second > p) {
+                auto v1 = cast(u);
+                auto v2 = cast(it.first);
+                auto p = v1->getPopulation() / 2e7 * pow(v2->getPopulation() / 2e7, 0.5) / dist[v2];
+                
+                if (it.second.second < p) {
                     it.second = {u, p};
                 }
             }
 
             for (auto i = u->getHead(); i; i = graph_.getEdge(i).next) {
-                if (infected_.getVertex(graph_.getEdge(i).v->getName())) {
-                    infected_.addEdge(u, graph_.getEdge(i).v, 0);
-                    infected_.addEdge(graph_.getEdge(i).v, u, 0);
+                if (infected_.hasVertex(graph_.getEdge(i).v->getName())) {
+                    infected_.addEdge(u->getName(), graph_.getEdge(i).v->getName(), 1);
+                    infected_.addEdge(graph_.getEdge(i).v->getName(), u->getName(), 1);
                 }
             }
         }
@@ -169,9 +174,9 @@ public:
         for (const auto& it : prob_) {
             if (status_[it.first] != "N") continue;
 
-            if (rand() % 1 <= it.second.second) {
-                infected_.addVertex(*(it.first));
-                infected_.addEdge(it.second.first, it.first, 0);
+            if ((double) rand() / RAND_MAX <= it.second.second) {            
+                infected_.addVertex(it.first->getName());
+                infected_.addEdge(it.second.first->getName(), it.first->getName(), 1);
                 latency_.push({timestamp + generateLatency(), it.first});
                 status_[it.first] = "L";
             }

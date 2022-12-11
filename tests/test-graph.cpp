@@ -4,12 +4,10 @@
 using namespace test;
 
 TEST_CASE("Test simple graph", "[graph]") {
-    Graph g;
-    
     setVertices(10);
 
     for (int i = 0; i < 10; i++)
-        add_edge(0, i, 0);
+        add_edge(0, i);
 
     auto vertexList = g.getVertexList();
 
@@ -18,13 +16,12 @@ TEST_CASE("Test simple graph", "[graph]") {
 
     auto edgeList = g.getEdgeList();
 
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 10; i++) {
         REQUIRE(edgeList[i] == g.getEdge(i + 1));
+    }
 }
 
 TEST_CASE("Test copy constructor and operator=", "[graph]") {
-    Graph g;
-
     setVertices(5);
 
     add_edge(0, 1, 0);
@@ -45,25 +42,19 @@ TEST_CASE("Test copy constructor and operator=", "[graph]") {
 }
 
 TEST_CASE("Test wrong operations", "[graph]") {
-    // Graph g;
+    setVertices(5);
 
-    // setVertices(5);
+    try {
+        g.addVertex("1");
 
-    // try {
-    //     g.addVertex("1");
+        REQUIRE(0);
+    } catch (invalid_argument& e) {}
 
-    //     REQUIRE(0);
-    // } catch (invalid_argument& e) {}
+    try {
+        add_edge(3, 5);
 
-    // try {
-    //     add_edge(3, 5, 0);
+        REQUIRE(0);
+    } catch (invalid_argument& e) {}
 
-    //     REQUIRE(0);
-    // } catch (invalid_argument& e) {}
-
-    // try {
-    //     g.getVertex("5");
-
-    //     REQUIRE(0);
-    // } catch (invalid_argument& e) {}
+    REQUIRE(! g.hasVertex("5"));
 }

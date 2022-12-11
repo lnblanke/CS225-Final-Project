@@ -20,7 +20,7 @@ std::map<Vertex*, size_t>& depth) {
 
             residual -= update;
             graph.getEdge(i).w -= update;
-            graph.getEdge(i ^ 1).w += update;
+            graph.getEdge((i - 1 ^ 1) + 1).w += update;
         }
     }
 

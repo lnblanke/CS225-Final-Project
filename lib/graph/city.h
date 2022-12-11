@@ -54,7 +54,7 @@ namespace graph {
         */
         inline double getLongitude() const { return axis_.second; }
 
-        inline double getPopulation() const { return population_; }
+        inline size_t getPopulation() const { return population_; }
 
         bool operator<(const City& other) {
             return axis_ < other.axis_;

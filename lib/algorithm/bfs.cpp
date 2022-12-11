@@ -18,7 +18,7 @@ bool algorithm::bfs(const Graph& graph, Vertex* start, Vertex* dest, std::map<Ve
 
         for (auto i = p->getHead(); i; i = graph.getEdge(i).next) {
             auto edge = graph.getEdge(i);
-            if (edge.w && depth.find(edge.v) == depth.end()) {
+            if (edge.w && ! depth[edge.v]) {
                 q.push(edge.v);
                 depth[edge.v] = depth[p] + 1;
             }

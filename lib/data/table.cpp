@@ -11,17 +11,13 @@ std::string Table::Column::deduceType(std::string item) const {
         num_sign += (c == '-');
     }
 
-    if (type_ == "int" && ! dot_cnt && num_cnt + num_sign == item.length()) {
+    if (type_ == "numeric" && dot_cnt <= 1 && num_cnt + num_sign + dot_cnt == item.length()) {
         if (item.empty()) item = "0";
-        return item;
-    } else if (type_ == "double" && dot_cnt <= 1 && num_cnt + num_sign + dot_cnt == item.length()) {
-        if (item.empty()) item = "0";
-        return item;
-    } else if (type_ == "string") {
-        return item;
+    } else if (type_ != "categorical") {
+        throw std::invalid_argument("The type of item is not aligned with the type of column");
     }
 
-    throw std::invalid_argument("The type of item is not aligned with the type of column");
+    return item;
 }
 
 Table::Column::Column(std::string name) {
@@ -33,32 +29,30 @@ void Table::Column::resize(size_t size) {
     items_.resize(size);
 }
 
-std::string Table::Column::get(size_t idx) const {
+std::string Table::Column::get(size_t idx) {
     if (idx >= items_.size()) 
         throw std::invalid_argument("Index for Column.get() exceeds the size");
+
+    if (items_[idx].empty() && type_ == "numeric")
+        items_[idx] = "0";
 
     return items_[idx];
 }
 
 void Table::Column::set(size_t idx, std::string item) {
     if (idx >= items_.size()) 
-        throw std::invalid_argument("Index for Column.get() exceeds the size");
+        throw std::invalid_argument("Index for Column.set() exceeds the size");
 
     if (type_.empty()) {
         if (item == "") {
             return;
         }
         try {
-            type_ = "double";
+            type_ = "numeric";
             items_[idx] = deduceType(item);
         } catch (std::invalid_argument& e) {
-            try {
-                type_ = "int";
-                items_[idx] = deduceType(item);
-            } catch (std::invalid_argument& e) {
-                type_ = "string";
-                items_[idx] = deduceType(item);
-            }
+            type_ = "categorical";
+            items_[idx] = deduceType(item);    
         }
     } else {
         items_[idx] = deduceType(item);    
@@ -67,7 +61,7 @@ void Table::Column::set(size_t idx, std::string item) {
 
 std::string& Table::Column::operator[](size_t idx) {
     if (idx >= items_.size()) 
-        throw std::invalid_argument("Index for Column.get() exceeds the size");
+        throw std::invalid_argument("Index for Column.operator[idx] exceeds the size");
 
     return items_[idx];
 }
@@ -124,7 +118,7 @@ Table::Column& Table::operator[](std::string col_name) {
 
 Table::Column& Table::operator[](size_t idx) {
     if (idx >= columns.size())
-        throw std::invalid_argument("Index for Table[idx] is out of range");
+        throw std::invalid_argument("Index for Table[" + std::to_string(idx) + "] is out of range");
 
     return *columns[idx];
 }

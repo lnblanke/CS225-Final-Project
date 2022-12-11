@@ -1,6 +1,6 @@
 CMakeFiles/test.dir/tests/test-dijkstra.cpp.o: \
   /workspaces/cs225/CS225-Final-Project/tests/test-dijkstra.cpp \
-  /workspaces/cs225/CS225-Final-Project/tests/../lib/algorithm/dfs.h \
+  /workspaces/cs225/CS225-Final-Project/tests/../lib/algorithm/dijkstra.h \
   /workspaces/cs225/CS225-Final-Project/lib/algorithm/../graph/graph.h \
   /workspaces/cs225/CS225-Final-Project/lib/graph/vertex.h \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/string \
@@ -142,6 +142,31 @@ CMakeFiles/test.dir/tests/test-dijkstra.cpp.o: \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/charconv.h \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/basic_string.tcc \
   /workspaces/cs225/CS225-Final-Project/lib/graph/edge.h \
+  /workspaces/cs225/CS225-Final-Project/lib/graph/city.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/cmath \
+  /usr/include/math.h /usr/include/aarch64-linux-gnu/bits/math-vector.h \
+  /usr/include/aarch64-linux-gnu/bits/libm-simd-decl-stubs.h \
+  /usr/include/aarch64-linux-gnu/bits/flt-eval-method.h \
+  /usr/include/aarch64-linux-gnu/bits/fp-logb.h \
+  /usr/include/aarch64-linux-gnu/bits/fp-fast.h \
+  /usr/include/aarch64-linux-gnu/bits/mathcalls-helper-functions.h \
+  /usr/include/aarch64-linux-gnu/bits/mathcalls.h \
+  /usr/include/aarch64-linux-gnu/bits/mathcalls-narrow.h \
+  /usr/include/aarch64-linux-gnu/bits/iscanonical.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/specfun.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/limits \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/tr1/gamma.tcc \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/tr1/special_function_util.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/tr1/bessel_function.tcc \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/tr1/beta_function.tcc \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/tr1/ell_integral.tcc \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/tr1/exp_integral.tcc \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/tr1/hypergeometric.tcc \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/tr1/legendre_function.tcc \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/tr1/modified_bessel_func.tcc \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/tr1/poly_hermite.tcc \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/tr1/poly_laguerre.tcc \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/tr1/riemann_zeta.tcc \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/vector \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/stl_uninitialized.h \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/stl_vector.h \
@@ -166,4 +191,95 @@ CMakeFiles/test.dir/tests/test-dijkstra.cpp.o: \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/uses_allocator.h \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/invoke.h \
   /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/stl_multimap.h \
-  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/erase_if.h
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/erase_if.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/queue \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/deque \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/stl_deque.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/deque.tcc \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/stl_heap.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/stl_queue.h \
+  /workspaces/cs225/CS225-Final-Project/tests/test.h \
+  /usr/include/catch2/catch_test_macros.hpp \
+  /usr/include/catch2/internal/catch_test_macro_impl.hpp \
+  /usr/include/catch2/catch_user_config.hpp \
+  /usr/include/catch2/internal/catch_assertion_handler.hpp \
+  /usr/include/catch2/catch_assertion_info.hpp \
+  /usr/include/catch2/internal/catch_result_type.hpp \
+  /usr/include/catch2/internal/catch_source_line_info.hpp \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/cstddef \
+  /usr/include/catch2/internal/catch_stringref.hpp \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/cassert \
+  /usr/include/assert.h \
+  /usr/include/catch2/internal/catch_decomposer.hpp \
+  /usr/include/catch2/catch_tostring.hpp /usr/include/string.h \
+  /usr/include/strings.h \
+  /usr/include/catch2/internal/catch_compiler_capabilities.hpp \
+  /usr/include/catch2/internal/catch_platform.hpp \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/optional \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/variant \
+  /usr/include/catch2/internal/catch_config_wchar.hpp \
+  /usr/include/catch2/internal/catch_reusable_string_stream.hpp \
+  /usr/include/catch2/internal/catch_noncopyable.hpp \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/ostream \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/ios \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/ios_base.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/locale_classes.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/locale_classes.tcc \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/system_error \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/aarch64-linux-gnu/c++/11/bits/error_constants.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/streambuf \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/streambuf.tcc \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/basic_ios.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/locale_facets.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/cwctype \
+  /usr/include/wctype.h \
+  /usr/include/aarch64-linux-gnu/bits/wctype-wchar.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/aarch64-linux-gnu/c++/11/bits/ctype_base.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/streambuf_iterator.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/aarch64-linux-gnu/c++/11/bits/ctype_inline.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/locale_facets.tcc \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/basic_ios.tcc \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/ostream.tcc \
+  /usr/include/catch2/internal/catch_void_type.hpp \
+  /usr/include/catch2/interfaces/catch_interfaces_enum_values_registry.hpp \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/ctime \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/ratio \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/chrono \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/parse_numbers.h \
+  /usr/include/catch2/interfaces/catch_interfaces_registry_hub.hpp \
+  /usr/include/catch2/internal/catch_unique_ptr.hpp \
+  /usr/include/catch2/internal/catch_move_and_forward.hpp \
+  /usr/include/catch2/internal/catch_meta.hpp \
+  /usr/include/catch2/interfaces/catch_interfaces_capture.hpp \
+  /usr/include/catch2/internal/catch_lazy_expr.hpp \
+  /usr/include/catch2/catch_message.hpp \
+  /usr/include/catch2/internal/catch_stream_end_stop.hpp \
+  /usr/include/catch2/internal/catch_message_info.hpp \
+  /usr/include/catch2/internal/catch_section.hpp \
+  /usr/include/catch2/catch_section_info.hpp \
+  /usr/include/catch2/catch_totals.hpp \
+  /usr/include/catch2/catch_timer.hpp \
+  /usr/include/catch2/internal/catch_unique_name.hpp \
+  /usr/include/catch2/internal/catch_config_counter.hpp \
+  /usr/include/catch2/internal/catch_test_registry.hpp \
+  /usr/include/catch2/interfaces/catch_interfaces_testcase.hpp \
+  /usr/include/catch2/internal/catch_preprocessor_remove_parens.hpp \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/iostream \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/istream \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/istream.tcc \
+  /workspaces/cs225/CS225-Final-Project/tests/../lib/graph/graph.h \
+  /workspaces/cs225/CS225-Final-Project/tests/../src/load_files.h \
+  /workspaces/cs225/CS225-Final-Project/tests/../src/../lib/data/file.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/fstream \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/codecvt.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/aarch64-linux-gnu/c++/11/bits/basic_file.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/aarch64-linux-gnu/c++/11/bits/c++io.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/fstream.tcc \
+  /workspaces/cs225/CS225-Final-Project/tests/../src/../lib/data/table.h \
+  /workspaces/cs225/CS225-Final-Project/tests/../src/../lib/graph/graph.h \
+  /workspaces/cs225/CS225-Final-Project/tests/../src/../lib/graph/city.h \
+  /workspaces/cs225/CS225-Final-Project/tests/../src/../lib/algorithm/kd-tree.h \
+  /workspaces/cs225/CS225-Final-Project/lib/algorithm/../graph/city.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/set \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/stl_set.h \
+  /usr/bin/../lib/gcc/aarch64-linux-gnu/11/../../../../include/c++/11/bits/stl_multiset.h

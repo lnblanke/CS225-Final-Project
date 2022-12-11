@@ -21,7 +21,7 @@ namespace graph {
         }
 
         bool operator==(const Edge& other) const {
-            return *u == *(other.u) && *v == *(other.v) && w == other.w && next == other.w;
+            return *u == *(other.u) && *v == *(other.v) && w == other.w && next == other.next;
         }
     };
 }

@@ -5,19 +5,49 @@
 using std::vector;
 using graph::City;
 
-int main() {
-    auto g = csv_to_graph();
+void printUsage(std::string command) {
+  std::cout << "Usage: " << command << " START_POINT LATENCY_PERIOD \n";
+}
 
-    auto virus = Spread(*g, static_cast<City*>(g->getVertex("Los Angeles, CA")), 3);
-
-    for (int _ = 0; _ < 10; _++) {
-        virus.nextStep();
+int main(int argc, char* argv[]) {
+    if (argc != 3) {
+        printUsage(argv[0]);
+        return 1;
     }
 
-    virus.isolate({"Washington, DC", "Syracuse, NY"});
+    auto g = csv_to_graph();
 
-    virus.intersect();
+    Spread instance(*g, argv[1], std::stoi(argv[2]));
 
-    virus.getTimeStamp();
-    virus.getCost();
+    ofstream ofs_status("../bin/status.csv");
+    ofstream ofs_node("../bin/nodes.csv");
+
+    ofs_node << "Name,State,Latitude,Longitude\n";
+
+    auto status = instance.getStatus();
+    for (const auto& v : status) {
+        auto c = static_cast<City*>(v.first);
+        ofs_node << c->getName() << ',' << c->getLatitude() << ',' << c->getLongitude() << '\n';
+        ofs_status << c->getName() << (v == *(--status.end())? '\n' : '|');
+    }
+
+    ofs_node.close();
+
+    size_t cnt = 0;
+
+    while (cnt != g->getVertexList().size() && instance.getTimeStamp() <= 300) {
+        instance.nextStep();
+
+        cnt = 0;
+
+        auto status = instance.getStatus();
+
+        for (const auto& it : status) {
+            ofs_status << it.second << (it == *(--status.end())? '\n' : '|');
+
+            if (it.second == "I") cnt++;
+        }
+    }
+
+    ofs_node.close();
 }

@@ -20,7 +20,7 @@ namespace data {
         public:
             Column(std::string name);
             void resize(size_t size);
-            std::string get(size_t idx) const;
+            std::string get(size_t idx);
             void set(size_t idx, std::string item);
             std::string getName() const { return name_; }
             std::string getType() const { return type_; }
