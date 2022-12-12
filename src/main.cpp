@@ -5,6 +5,9 @@
 using std::vector;
 using graph::City;
 
+const auto output_node_path = "../bin/nodes.csv";
+const auto output_status_path = "../bin/status.csv";
+
 void printUsage(std::string command) {
   std::cout << "Usage: " << command << " START_POINT LATENCY_PERIOD [BLOCK_TIME BLOCK_1 BLOCK_2 ... ] \n";
 }
@@ -19,8 +22,8 @@ int main(int argc, char* argv[]) {
 
     Spread instance(*g, argv[1], std::stoi(argv[2]));
 
-    ofstream ofs_status("../bin/status.csv");
-    ofstream ofs_node("../bin/nodes.csv");
+    ofstream ofs_status(output_status_path);
+    ofstream ofs_node(output_node_path);
 
     ofs_node << "Name,State,Latitude,Longitude\n";
 
