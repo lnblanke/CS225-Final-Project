@@ -131,15 +131,3 @@ TEST_CASE("Test Dijkstra large", "[dijkstra]") {
     for (int i = 0; i < 20; i++) 
         REQUIRE(result[vertex(i)] == ans[i]);
 }
-
-TEST_CASE("Test Dijkstra real", "[dijkstra]") {
-    initializeMap();
-
-    auto result = algorithm::dijkstra(Map, Map.getVertex("San Francisco,CA"));
-
-    REQUIRE(result[Map.getVertex("Los Angeles,CA")] - 2.5133830107 <= 1e-8);
-    REQUIRE(result[Map.getVertex("Boston,MA")] - 7.9799174235 <= 1e-8);
-    REQUIRE(result[Map.getVertex("New York,NY")] - 7.4937890716 <= 1e-8);
-    REQUIRE(result[Map.getVertex("Champaign,IL")] - 7.5332856004 <= 1e-8);
-    REQUIRE(result[Map.getVertex("Las Vegas,NV")] - 2.5540219433 <= 1e-8);
-}

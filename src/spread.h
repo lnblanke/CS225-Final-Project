@@ -14,6 +14,7 @@
 
 using std::vector;
 using std::set;
+using std::pair;
 using std::map;
 using std::queue;
 using graph::Graph;
@@ -96,8 +97,9 @@ public:
         calc.addVertex("source");
         calc.addVertex("sink");
 
-        for (const auto& v : blocking)
+        for (const auto& v : blocking) {
             status_[graph_.getVertex(v)] = "B";
+        }
 
         for (const auto v : graph_.getVertexList()) {
             if (status_[v] == "N")
@@ -112,12 +114,15 @@ public:
             return calc.getVertex("source");
         };
 
-        for (auto i = 0ul; i < graph_.getEdgeList().size(); i++) {
-            const auto& e = graph_.getEdge(i);
+        auto list = graph_.getEdgeList();
+
+        for (auto i = 0ul; i < list.size(); i++) {
+            const auto& e = list[i];
+
             if ((status_[e.u] == status_[e.v] && status_[e.u] != "N") || 
                 status_[e.u] == "I" || status_[e.u] == "L" || status_[e.v] == "B")  
                 continue;
-            
+
             calc.addEdge(find(e.u), find(e.v), e.w);
             indices.push_back(i);
         }

@@ -96,6 +96,7 @@ set(OLD_GLOB
   "/workspaces/cs225/CS225-Final-Project/tests/test-graph.cpp"
   "/workspaces/cs225/CS225-Final-Project/tests/test-kdtree.cpp"
   "/workspaces/cs225/CS225-Final-Project/tests/test-loadfile.cpp"
+  "/workspaces/cs225/CS225-Final-Project/tests/test-real.cpp"
   "/workspaces/cs225/CS225-Final-Project/tests/test-spread.cpp"
   "/workspaces/cs225/CS225-Final-Project/tests/test-table.cpp"
   "/workspaces/cs225/CS225-Final-Project/tests/test-tarjan.cpp"

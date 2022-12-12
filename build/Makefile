@@ -427,6 +427,30 @@ tests/test-loadfile.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-loadfile.cpp.s
 .PHONY : tests/test-loadfile.cpp.s
 
+tests/test-real.o: tests/test-real.cpp.o
+.PHONY : tests/test-real.o
+
+# target to build an object file
+tests/test-real.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-real.cpp.o
+.PHONY : tests/test-real.cpp.o
+
+tests/test-real.i: tests/test-real.cpp.i
+.PHONY : tests/test-real.i
+
+# target to preprocess a source file
+tests/test-real.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-real.cpp.i
+.PHONY : tests/test-real.cpp.i
+
+tests/test-real.s: tests/test-real.cpp.s
+.PHONY : tests/test-real.s
+
+# target to generate assembly for a file
+tests/test-real.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/tests/test-real.cpp.s
+.PHONY : tests/test-real.cpp.s
+
 tests/test-spread.o: tests/test-spread.cpp.o
 .PHONY : tests/test-spread.o
 
@@ -541,6 +565,9 @@ help:
 	@echo "... tests/test-loadfile.o"
 	@echo "... tests/test-loadfile.i"
 	@echo "... tests/test-loadfile.s"
+	@echo "... tests/test-real.o"
+	@echo "... tests/test-real.i"
+	@echo "... tests/test-real.s"
 	@echo "... tests/test-spread.o"
 	@echo "... tests/test-spread.i"
 	@echo "... tests/test-spread.s"

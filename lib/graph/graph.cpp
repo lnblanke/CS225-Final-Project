@@ -97,7 +97,7 @@ Get an edge at index
 
 idx: the index of the edge, 1 indexed
 */
-Edge Graph::getEdge(size_t idx) const{
+Edge Graph::getEdge(size_t idx) const {
     return edges_[idx - 1];
 }
 /*

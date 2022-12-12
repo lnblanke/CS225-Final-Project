@@ -7,7 +7,7 @@ import time
 nodes = pd.read_csv("../bin/nodes.csv", sep = ',')
 status = pd.read_csv("../bin/status.csv", sep = '|')
 
-status.replace(['N', 'L', 'I'], [0, 1, 2], inplace = True)
+status.replace(['N', 'L', 'I', 'B'], [0, 1, 2, 3], inplace = True)
 
 fig, ax = plt.subplots()
 fig.set_figwidth(20)
@@ -18,7 +18,7 @@ img = plt.imread("../bin/US Map.png")
 ax.imshow(img)
 ax.axis("off")
 
-colors = np.array(["green", "orange", "red"])
+colors = np.array(["green", "orange", "red", "white"])
 
 x_coef = (2135 - 206) / (122.2459 - 80.2086)
 x_bias = 206 - (-122.2459) * x_coef
@@ -32,9 +32,9 @@ for idx, (city, state, lat, lng) in nodes.iterrows():
     dic[lng * x_coef + x_bias + lat * y_coef + y_bias] = idx
     cities[idx, :] = [str(city), str(state), 0]
 
-annot = ax.annotate("", (0,0), xytext = (20,20), textcoords="offset points",
+annot = ax.annotate("", (0,0), xytext = (20,20), textcoords = "offset points",
                     bbox = dict(boxstyle = "round", fc="w"),
-                    arrowprops=dict(arrowstyle="-"))
+                    arrowprops = dict(arrowstyle = "-"))
 annot.set_visible(False)
 
 sc = ax.scatter(nodes["Longitude"] * x_coef + x_bias, 

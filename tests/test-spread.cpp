@@ -1,13 +1,14 @@
 #include "test.h"
 #include "../src/spread.h"
+#include "../src/load_files.h"
 
 using namespace test;
 
 #define start "Chicago,IL"
 
-TEST_CASE("Test spread nextStep", "[spread]") {
-    initializeMap();
+static auto Map = *(csv_to_graph());
 
+TEST_CASE("Test spread nextStep", "[spread]") {
     Spread s(Map, start, 5);
 
     set<Vertex*> latency, infected;
@@ -36,7 +37,6 @@ TEST_CASE("Test spread nextStep", "[spread]") {
 }
 
 TEST_CASE("Test spread randomness", "[spread]") {
-    initializeMap();
     Spread s1(Map, start, 5);
     Spread s2(Map, start, 5);
     Spread s3(Map, start, 5);

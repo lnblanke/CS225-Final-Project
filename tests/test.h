@@ -8,7 +8,6 @@
 #include <iostream>
 
 #include "../lib/graph/graph.h"
-#include "../src/load_files.h"
 
 using std::map;
 using std::string;
@@ -22,12 +21,6 @@ using graph::Vertex;
 
 namespace test {
     static Graph g;
-    static Graph Map;
-
-    static void initializeMap() {
-        if (Map.getVertexList().empty())
-            Map = *(csv_to_graph());
-    }
 
     static void setVertices(int num) {
         g = Graph();

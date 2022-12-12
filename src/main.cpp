@@ -6,11 +6,11 @@ using std::vector;
 using graph::City;
 
 void printUsage(std::string command) {
-  std::cout << "Usage: " << command << " START_POINT LATENCY_PERIOD \n";
+  std::cout << "Usage: " << command << " START_POINT LATENCY_PERIOD [BLOCK_TIME BLOCK_1 BLOCK_2 ... ] \n";
 }
 
 int main(int argc, char* argv[]) {
-    if (argc != 3) {
+    if (argc != 3 && argc < 5) {
         printUsage(argv[0]);
         return 1;
     }
@@ -37,6 +37,15 @@ int main(int argc, char* argv[]) {
 
     while (cnt != g->getVertexList().size() && instance.getTimeStamp() <= 300) {
         instance.nextStep();
+
+        if (argc >= 5 && stoul(argv[3]) == instance.getTimeStamp()) {
+            vector<string> v;
+
+            for (int i = 4; i < argc; i++)
+                v.push_back(argv[i]);
+
+            instance.isolate(v);
+        }
 
         cnt = 0;
 

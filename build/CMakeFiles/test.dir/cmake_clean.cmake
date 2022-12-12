@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/test.dir/tests/test-kdtree.cpp.o.d"
   "CMakeFiles/test.dir/tests/test-loadfile.cpp.o"
   "CMakeFiles/test.dir/tests/test-loadfile.cpp.o.d"
+  "CMakeFiles/test.dir/tests/test-real.cpp.o"
+  "CMakeFiles/test.dir/tests/test-real.cpp.o.d"
   "CMakeFiles/test.dir/tests/test-spread.cpp.o"
   "CMakeFiles/test.dir/tests/test-spread.cpp.o.d"
   "CMakeFiles/test.dir/tests/test-table.cpp.o"

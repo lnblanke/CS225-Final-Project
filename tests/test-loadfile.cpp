@@ -1,8 +1,9 @@
 #include "test.h"
+#include "../src/load_files.h"
 using namespace test;
 
 TEST_CASE("Test load file", "loadfile") {
-    initializeMap();
+    auto Map = *(csv_to_graph());
 
     set<Vertex*> cities;
 

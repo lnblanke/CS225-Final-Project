@@ -167,15 +167,3 @@ TEST_CASE("Test large BFS", "[bfs]") {
     }
 }
 
-TEST_CASE("Test BFS real", "[bfs]") {
-    initializeMap();
-
-    map<Vertex*, size_t> depth;
-    
-    REQUIRE(algorithm::bfs(Map, Map.getVertex("Chicago,IL"), Map.getVertex("Seattle,WA"), depth));
-
-    REQUIRE(depth[Map.getVertex("Champaign,IL")] == 2);
-    REQUIRE(depth[Map.getVertex("Dallas,TX")] == 2);
-    REQUIRE(depth[Map.getVertex("Miami,FL")] == 2);
-    REQUIRE(depth[Map.getVertex("Washington,DC")] == 2);
-}
