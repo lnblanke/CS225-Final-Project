@@ -9,7 +9,7 @@
 using namespace graph;
 
 namespace algorithm {
-    double dinic(Graph& g, Vertex* source, Vertex* sink) {
+    static double dinic(Graph& g, Vertex* source, Vertex* sink) {
         double cost = 0;
 
         std::map<Vertex*, size_t> depth;        

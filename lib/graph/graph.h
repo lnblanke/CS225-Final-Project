@@ -3,6 +3,7 @@
 
 #include "vertex.h"
 #include "edge.h"
+#include "city.h"
 
 #include <vector>
 #include <stdexcept>
@@ -31,13 +32,17 @@ namespace graph {
         ~Graph();
         Graph(const Graph& other);
         Graph& operator=(const Graph& other);
-        void addVertex(Vertex& v);
+        void addVertex(std::string name);
+        void addVertex(std::string name, double lat, double lon, size_t population);
+        bool hasVertex(std::string name) const;
         Vertex* getVertex(std::string name) const;
         void addEdge(Vertex* v1, Vertex* v2, double weight);
+        void addEdge(std::string v1_name, std::string v2_name, double weight);
         Edge getEdge(size_t idx) const; 
         Edge& getEdge(size_t idx);
         std::vector<Vertex*> getVertexList() const;
         std::vector<Edge> getEdgeList() const;
+        void clean();
     };
 }
 

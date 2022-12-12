@@ -9,13 +9,14 @@
 
 #include <string>
 #include <map>
+#include <set>
 #include <vector>
 
 using namespace data;
 using std::string;
 using std::map;
-using std::vector;
 using std::set;
+using std::vector;
 using graph::Graph;
 using graph::City;
 using graph::getDistance;
@@ -91,7 +92,6 @@ const set<string> route_drops = {
 
 const set<string> population_drops = {
     "city_ascii",
-    // "state_id",
     "state_name",
     "county_fips",
     "county_name",
@@ -117,7 +117,7 @@ const vector<string> edge_features = {
     "L2 distance"
 };
 
-Table& process(const string& file, vector<string> features = e_vec,  
+static Table& process(const string& file, vector<string> features = e_vec,  
 const set<string>& drops = e_set, char sep = ',') {
     auto data = read_file(file, sep);
 
@@ -150,38 +150,40 @@ const set<string>& drops = e_set, char sep = ',') {
     return *table;
 }
 
-graph::Graph* csv_to_graph() {
+static graph::Graph* csv_to_graph() {
     auto airport_table = process(airport_file_path, airport_features, airport_drops);
     auto route_table = process(route_file_path, route_features, route_drops);
     auto city_table = process(population_file_path, e_vec, population_drops);
     auto node_table = process(node_file_path, node_features, {"Node ID"}, ' ');
     auto edge_table = process(edge_file_path, edge_features, {"Edge ID"}, ' ');
 
-    // @TODO
     Graph* g = new Graph();
     vector<City*> v;
 
     for (auto i = 0ul; i < city_table.getNumRows(); i++) {
-        auto insert = new City(city_table["city"][i] + ", " + city_table["state_id"][i], 
-                                cast_double(city_table["lat"][i]),
-                                cast_double(city_table["lng"][i]),
-                                cast_int(city_table["population"][i]));        
+        auto name = city_table["city"][i] + "," + city_table["state_id"][i];
+        auto lat = cast_double(city_table["lat"][i]);
+        auto lng = cast_double(city_table["lng"][i]);
+        auto population = cast_int(city_table["population"][i]);
+
+        if (lat >= 50 || lat <= 24 || lng >= -66 || lng <= -125)
+            continue;
 
         for (const auto& v : g->getVertexList()) {
             auto city = static_cast<City*>(v);
-            if (abs(city->getLatitude() - insert->getLatitude()) <= 0.5 && 
-                abs(city->getLongitude() - insert->getLongitude()) <= 0.5) {
-                (*city) += *insert;
-                delete insert;
-                insert = 0;
+            
+            if (abs(city->getLatitude() - lat) <= 0.5 && 
+                abs(city->getLongitude() - lng) <= 0.5) {
+                (*city) += City(name, lat, lng, population);
+                name = "";
                 break;
             }
         }
         
-        if (! insert) continue;
+        if (name.empty()) continue;
 
-        g->addVertex(*insert);
-        v.push_back(insert);
+        g->addVertex(name, lat, lng, population);
+        v.push_back(static_cast<City*>(g->getVertex(name)));
     }
 
     KDTree tree(v);
@@ -192,14 +194,20 @@ graph::Graph* csv_to_graph() {
         double lng = -(cast_double(node_table["Normalized X"][i]) * coeff_x + bias_x) / 3600;
         double lat = (cast_double(node_table["Normalized Y"][i]) * coeff_y + bias_y) / 3600;
 
-        mapping[i] = tree.findNearestNeighbor({lat, lng});
+        auto nearest = tree.findNearestNeighbor({lat, lng});
+
+        if (abs(nearest->getLatitude() - lat) <= 0.5 && 
+            abs(nearest->getLongitude() - lng) <= 0.5) {
+            mapping[i] = nearest;
+        }
     }    
 
     for (auto i = 0ul; i < edge_table.getNumRows(); i++) {
         auto u = cast_int(edge_table["Start Node ID"][i]);
         auto v = cast_int(edge_table["End Node ID"][i]);
 
-        if (mapping[u] != mapping[v]) {
+        if (mapping.find(u) != mapping.end() && mapping.find(v) != mapping.end() && 
+            mapping[u] != mapping[v]) {
             g->addEdge(mapping[u], mapping[v], getDistance(mapping[u], mapping[v]) / road_speed);
             g->addEdge(mapping[v], mapping[u], getDistance(mapping[u], mapping[v]) / road_speed);
         }
@@ -209,10 +217,15 @@ graph::Graph* csv_to_graph() {
  
     for (auto i = 0ul; i < airport_table.getNumRows(); i++) {
         auto ap = airport_table["IATA"][i];
+        auto lat = cast_double(airport_table["Latitude"][i]);
+        auto lng = cast_double(airport_table["Longitude"][i]);
         if (airport_table["Country"][i] == "United States") {
-            airports[ap] = tree.findNearestNeighbor({cast_double(airport_table["Latitude"][i]), 
-                                                     cast_double(airport_table["Longitude"][i])
-                                                    });
+            auto nearest = tree.findNearestNeighbor({lat, lng});
+
+            if (abs(nearest->getLatitude() - lat) <= 0.5 && 
+                abs(nearest->getLongitude() - lng) <= 0.5) {
+                airports[ap] = nearest;
+            }
         }
     }
 
@@ -221,8 +234,10 @@ graph::Graph* csv_to_graph() {
         auto dest = route_table["Destination airport"][i];
         if (airports.find(source) != airports.end() && airports.find(dest) != airports.end())
             g->addEdge(airports[source], airports[dest], 
-                       getDistance(airports[source], airports[dest]) / air_speed);
+                       getDistance(airports[source], airports[dest]) / air_speed + 2);
     }
+
+    g->clean();
 
     return g;
 }

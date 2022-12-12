@@ -75,7 +75,7 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "/workspaces/cs225/CS225-Final-Project/build/CMakeFiles/cmake.verify_globs")
 endif()
 
-# sources at CMakeLists.txt:14 (file)
+# sources at CMakeLists.txt:15 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/workspaces/cs225/CS225-Final-Project/src/*.cpp")
 set(OLD_GLOB
   "/workspaces/cs225/CS225-Final-Project/src/main.cpp"
@@ -85,14 +85,19 @@ if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   file(TOUCH_NOCREATE "/workspaces/cs225/CS225-Final-Project/build/CMakeFiles/cmake.verify_globs")
 endif()
 
-# test_src at CMakeLists.txt:22 (file)
+# test_src at CMakeLists.txt:23 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/workspaces/cs225/CS225-Final-Project/tests/test-*.cpp")
 set(OLD_GLOB
   "/workspaces/cs225/CS225-Final-Project/tests/test-bfs.cpp"
   "/workspaces/cs225/CS225-Final-Project/tests/test-dfs.cpp"
   "/workspaces/cs225/CS225-Final-Project/tests/test-dijkstra.cpp"
+  "/workspaces/cs225/CS225-Final-Project/tests/test-dinic.cpp"
   "/workspaces/cs225/CS225-Final-Project/tests/test-file.cpp"
   "/workspaces/cs225/CS225-Final-Project/tests/test-graph.cpp"
+  "/workspaces/cs225/CS225-Final-Project/tests/test-kdtree.cpp"
+  "/workspaces/cs225/CS225-Final-Project/tests/test-loadfile.cpp"
+  "/workspaces/cs225/CS225-Final-Project/tests/test-real.cpp"
+  "/workspaces/cs225/CS225-Final-Project/tests/test-spread.cpp"
   "/workspaces/cs225/CS225-Final-Project/tests/test-table.cpp"
   "/workspaces/cs225/CS225-Final-Project/tests/test-tarjan.cpp"
   )

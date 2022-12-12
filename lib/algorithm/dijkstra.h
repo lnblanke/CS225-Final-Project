@@ -9,7 +9,7 @@
 using namespace graph;
 
 namespace algorithm {
-    std::map<Vertex*, size_t> dijkstra(const Graph& graph, Vertex* start);
+    std::map<Vertex*, double> dijkstra(const Graph& graph, Vertex* start);
 }
 
 #endif

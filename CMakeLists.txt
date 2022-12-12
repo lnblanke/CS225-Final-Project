@@ -8,7 +8,8 @@ add_subdirectory(lib/algorithm)
 add_subdirectory(lib/data)
 add_subdirectory(lib/graph)
 
-add_library(test_lib tests/test.h tests/test.cpp)
+add_library(test_lib tests/test.h)
+set_target_properties(test_lib PROPERTIES LINKER_LANGUAGE CXX)
 target_include_directories(test_lib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/tests)
 
 file(GLOB_RECURSE sources CONFIGURE_DEPENDS src/*.cpp)

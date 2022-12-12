@@ -4,7 +4,6 @@
 #include <vector>
 #include "../graph/city.h"
 using std::vector;
-using std::queue;
 using graph::City;
 
 #define point vector<double>

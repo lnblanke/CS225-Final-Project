@@ -111,10 +111,24 @@ CMakeFiles/test.dir/tests/test-dijkstra.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/test-dijkstra.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cs225/CS225-Final-Project/tests/test-dijkstra.cpp -o CMakeFiles/test.dir/tests/test-dijkstra.cpp.s
 
+CMakeFiles/test.dir/tests/test-dinic.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/tests/test-dinic.cpp.o: ../tests/test-dinic.cpp
+CMakeFiles/test.dir/tests/test-dinic.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test.dir/tests/test-dinic.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/test-dinic.cpp.o -MF CMakeFiles/test.dir/tests/test-dinic.cpp.o.d -o CMakeFiles/test.dir/tests/test-dinic.cpp.o -c /workspaces/cs225/CS225-Final-Project/tests/test-dinic.cpp
+
+CMakeFiles/test.dir/tests/test-dinic.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/tests/test-dinic.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cs225/CS225-Final-Project/tests/test-dinic.cpp > CMakeFiles/test.dir/tests/test-dinic.cpp.i
+
+CMakeFiles/test.dir/tests/test-dinic.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/test-dinic.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cs225/CS225-Final-Project/tests/test-dinic.cpp -o CMakeFiles/test.dir/tests/test-dinic.cpp.s
+
 CMakeFiles/test.dir/tests/test-file.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/tests/test-file.cpp.o: ../tests/test-file.cpp
 CMakeFiles/test.dir/tests/test-file.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test.dir/tests/test-file.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/tests/test-file.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/test-file.cpp.o -MF CMakeFiles/test.dir/tests/test-file.cpp.o.d -o CMakeFiles/test.dir/tests/test-file.cpp.o -c /workspaces/cs225/CS225-Final-Project/tests/test-file.cpp
 
 CMakeFiles/test.dir/tests/test-file.cpp.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/test.dir/tests/test-file.cpp.s: cmake_force
 CMakeFiles/test.dir/tests/test-graph.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/tests/test-graph.cpp.o: ../tests/test-graph.cpp
 CMakeFiles/test.dir/tests/test-graph.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test.dir/tests/test-graph.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/tests/test-graph.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/test-graph.cpp.o -MF CMakeFiles/test.dir/tests/test-graph.cpp.o.d -o CMakeFiles/test.dir/tests/test-graph.cpp.o -c /workspaces/cs225/CS225-Final-Project/tests/test-graph.cpp
 
 CMakeFiles/test.dir/tests/test-graph.cpp.i: cmake_force
@@ -139,10 +153,66 @@ CMakeFiles/test.dir/tests/test-graph.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/test-graph.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cs225/CS225-Final-Project/tests/test-graph.cpp -o CMakeFiles/test.dir/tests/test-graph.cpp.s
 
+CMakeFiles/test.dir/tests/test-kdtree.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/tests/test-kdtree.cpp.o: ../tests/test-kdtree.cpp
+CMakeFiles/test.dir/tests/test-kdtree.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test.dir/tests/test-kdtree.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/test-kdtree.cpp.o -MF CMakeFiles/test.dir/tests/test-kdtree.cpp.o.d -o CMakeFiles/test.dir/tests/test-kdtree.cpp.o -c /workspaces/cs225/CS225-Final-Project/tests/test-kdtree.cpp
+
+CMakeFiles/test.dir/tests/test-kdtree.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/tests/test-kdtree.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cs225/CS225-Final-Project/tests/test-kdtree.cpp > CMakeFiles/test.dir/tests/test-kdtree.cpp.i
+
+CMakeFiles/test.dir/tests/test-kdtree.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/test-kdtree.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cs225/CS225-Final-Project/tests/test-kdtree.cpp -o CMakeFiles/test.dir/tests/test-kdtree.cpp.s
+
+CMakeFiles/test.dir/tests/test-loadfile.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/tests/test-loadfile.cpp.o: ../tests/test-loadfile.cpp
+CMakeFiles/test.dir/tests/test-loadfile.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test.dir/tests/test-loadfile.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/test-loadfile.cpp.o -MF CMakeFiles/test.dir/tests/test-loadfile.cpp.o.d -o CMakeFiles/test.dir/tests/test-loadfile.cpp.o -c /workspaces/cs225/CS225-Final-Project/tests/test-loadfile.cpp
+
+CMakeFiles/test.dir/tests/test-loadfile.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/tests/test-loadfile.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cs225/CS225-Final-Project/tests/test-loadfile.cpp > CMakeFiles/test.dir/tests/test-loadfile.cpp.i
+
+CMakeFiles/test.dir/tests/test-loadfile.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/test-loadfile.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cs225/CS225-Final-Project/tests/test-loadfile.cpp -o CMakeFiles/test.dir/tests/test-loadfile.cpp.s
+
+CMakeFiles/test.dir/tests/test-real.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/tests/test-real.cpp.o: ../tests/test-real.cpp
+CMakeFiles/test.dir/tests/test-real.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/test.dir/tests/test-real.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/test-real.cpp.o -MF CMakeFiles/test.dir/tests/test-real.cpp.o.d -o CMakeFiles/test.dir/tests/test-real.cpp.o -c /workspaces/cs225/CS225-Final-Project/tests/test-real.cpp
+
+CMakeFiles/test.dir/tests/test-real.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/tests/test-real.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cs225/CS225-Final-Project/tests/test-real.cpp > CMakeFiles/test.dir/tests/test-real.cpp.i
+
+CMakeFiles/test.dir/tests/test-real.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/test-real.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cs225/CS225-Final-Project/tests/test-real.cpp -o CMakeFiles/test.dir/tests/test-real.cpp.s
+
+CMakeFiles/test.dir/tests/test-spread.cpp.o: CMakeFiles/test.dir/flags.make
+CMakeFiles/test.dir/tests/test-spread.cpp.o: ../tests/test-spread.cpp
+CMakeFiles/test.dir/tests/test-spread.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/test.dir/tests/test-spread.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/test-spread.cpp.o -MF CMakeFiles/test.dir/tests/test-spread.cpp.o.d -o CMakeFiles/test.dir/tests/test-spread.cpp.o -c /workspaces/cs225/CS225-Final-Project/tests/test-spread.cpp
+
+CMakeFiles/test.dir/tests/test-spread.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.dir/tests/test-spread.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /workspaces/cs225/CS225-Final-Project/tests/test-spread.cpp > CMakeFiles/test.dir/tests/test-spread.cpp.i
+
+CMakeFiles/test.dir/tests/test-spread.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.dir/tests/test-spread.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /workspaces/cs225/CS225-Final-Project/tests/test-spread.cpp -o CMakeFiles/test.dir/tests/test-spread.cpp.s
+
 CMakeFiles/test.dir/tests/test-table.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/tests/test-table.cpp.o: ../tests/test-table.cpp
 CMakeFiles/test.dir/tests/test-table.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test.dir/tests/test-table.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/test.dir/tests/test-table.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/test-table.cpp.o -MF CMakeFiles/test.dir/tests/test-table.cpp.o.d -o CMakeFiles/test.dir/tests/test-table.cpp.o -c /workspaces/cs225/CS225-Final-Project/tests/test-table.cpp
 
 CMakeFiles/test.dir/tests/test-table.cpp.i: cmake_force
@@ -156,7 +226,7 @@ CMakeFiles/test.dir/tests/test-table.cpp.s: cmake_force
 CMakeFiles/test.dir/tests/test-tarjan.cpp.o: CMakeFiles/test.dir/flags.make
 CMakeFiles/test.dir/tests/test-tarjan.cpp.o: ../tests/test-tarjan.cpp
 CMakeFiles/test.dir/tests/test-tarjan.cpp.o: CMakeFiles/test.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test.dir/tests/test-tarjan.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/test.dir/tests/test-tarjan.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test.dir/tests/test-tarjan.cpp.o -MF CMakeFiles/test.dir/tests/test-tarjan.cpp.o.d -o CMakeFiles/test.dir/tests/test-tarjan.cpp.o -c /workspaces/cs225/CS225-Final-Project/tests/test-tarjan.cpp
 
 CMakeFiles/test.dir/tests/test-tarjan.cpp.i: cmake_force
@@ -172,8 +242,13 @@ test_OBJECTS = \
 "CMakeFiles/test.dir/tests/test-bfs.cpp.o" \
 "CMakeFiles/test.dir/tests/test-dfs.cpp.o" \
 "CMakeFiles/test.dir/tests/test-dijkstra.cpp.o" \
+"CMakeFiles/test.dir/tests/test-dinic.cpp.o" \
 "CMakeFiles/test.dir/tests/test-file.cpp.o" \
 "CMakeFiles/test.dir/tests/test-graph.cpp.o" \
+"CMakeFiles/test.dir/tests/test-kdtree.cpp.o" \
+"CMakeFiles/test.dir/tests/test-loadfile.cpp.o" \
+"CMakeFiles/test.dir/tests/test-real.cpp.o" \
+"CMakeFiles/test.dir/tests/test-spread.cpp.o" \
 "CMakeFiles/test.dir/tests/test-table.cpp.o" \
 "CMakeFiles/test.dir/tests/test-tarjan.cpp.o"
 
@@ -183,8 +258,13 @@ test_EXTERNAL_OBJECTS =
 test: CMakeFiles/test.dir/tests/test-bfs.cpp.o
 test: CMakeFiles/test.dir/tests/test-dfs.cpp.o
 test: CMakeFiles/test.dir/tests/test-dijkstra.cpp.o
+test: CMakeFiles/test.dir/tests/test-dinic.cpp.o
 test: CMakeFiles/test.dir/tests/test-file.cpp.o
 test: CMakeFiles/test.dir/tests/test-graph.cpp.o
+test: CMakeFiles/test.dir/tests/test-kdtree.cpp.o
+test: CMakeFiles/test.dir/tests/test-loadfile.cpp.o
+test: CMakeFiles/test.dir/tests/test-real.cpp.o
+test: CMakeFiles/test.dir/tests/test-spread.cpp.o
 test: CMakeFiles/test.dir/tests/test-table.cpp.o
 test: CMakeFiles/test.dir/tests/test-tarjan.cpp.o
 test: CMakeFiles/test.dir/build.make
@@ -195,7 +275,7 @@ test: lib/data/libdata.a
 test: libtest_lib.a
 test: /usr/lib/libCatch2.a
 test: CMakeFiles/test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/workspaces/cs225/CS225-Final-Project/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable test"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
